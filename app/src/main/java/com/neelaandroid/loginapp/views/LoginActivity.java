@@ -15,8 +15,8 @@ import com.neelaandroid.loginapp.presenters.LoginScreenPresenterImpl;
 
 
 public class LoginActivity extends AppCompatActivity  implements LoginScreenContract.View {
-    EditText userName, password;
-    Button loginButton;
+    EditText mEditUserName, mEditPassword;
+    Button mButtonLogin;
     LoginScreenContract.Presenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +24,14 @@ public class LoginActivity extends AppCompatActivity  implements LoginScreenCont
         setContentView(R.layout.activity_login);
         presenter=new LoginScreenPresenterImpl(this);
 
-        userName = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        loginButton = (Button) findViewById(R.id.button_login);
+        mEditUserName = (EditText) findViewById(R.id.EditText_Username);
+        mEditPassword = (EditText) findViewById(R.id.EditText_Password);
+        mButtonLogin =  (Button) findViewById(R.id.Button_login);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               presenter.handleLogin(userName.getText().toString().trim(), password.getText().toString().trim());
+               presenter.handleLogin(mEditUserName.getText().toString().trim(), mEditPassword.getText().toString().trim());
             }
         });
 
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity  implements LoginScreenCont
 
     @Override
     public void loginSuccessFully() {
-        Toast.makeText(this, "Login SuccessFully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, this.getString(R.string.login_success), Toast.LENGTH_SHORT).show();
         Intent intent=new Intent(this,DashboardActivity.class);
        startActivity(intent);
        finish();
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity  implements LoginScreenCont
 
     @Override
     public void loginFail() {
-        Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, this.getString(R.string.login_fail), Toast.LENGTH_SHORT).show();
     }
 
     @Override

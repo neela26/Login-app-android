@@ -9,4 +9,7 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="setting">Setting</string>
     <string name="logout">Logout</string>
+    <string name="login_success">Login SuccessFully</string>
+    <string name="login_fail">login failed</string>
+    <string name="user_welcome_message">Welcome</string>
 </resources>

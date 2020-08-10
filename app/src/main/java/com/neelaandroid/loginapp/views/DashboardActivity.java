@@ -13,7 +13,7 @@ import com.neelaandroid.loginapp.R;
 import com.neelaandroid.loginapp.utils.SharedPreferencesClass;
 
 public class DashboardActivity extends AppCompatActivity {
-    TextView userName;
+    TextView mTextViewUserName;
     SharedPreferencesClass mPreferencesClass;
     Intent intent;
 
@@ -22,10 +22,10 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        userName = findViewById(R.id.userName);
+        mTextViewUserName = findViewById(R.id.Text_UserName);
         mPreferencesClass = new SharedPreferencesClass(this);
         String name = mPreferencesClass.getValue("userName");
-        userName.setText("Welcome, " + name);
+        mTextViewUserName.setText(this.getString(R.string.user_welcome_message)+ name);
 
         intent = new Intent(this, MainActivity.class);
     }
