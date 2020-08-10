@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="HomeBackground"></string>
+    <string name="login_text">Login</string>
+    <string name="login_button">Login</string>
+    <string name="hint_username"><font size="18">Username</font></string>
+    <string name="hint_password"><font size="18">Password</font></string>
+    <string name="register">DONT HAVE AN ACCOUNT?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
+</resources>
